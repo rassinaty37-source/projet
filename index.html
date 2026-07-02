@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Rassi Nathan Emmanuel</title>
+    
+    <!-- COMMENTAIRE PROF : Liaison avec la feuille de style CSS externe -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- COMMENTAIRE PROF : Importation de la bibliothèque Font Awesome pour les icônes vectorielles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Canvas 3D de fond -->
+    <canvas id="bg3d" aria-hidden="true"></canvas>
+
+    <!-- ==========================================
+         PARTIE 1 : LA BARRE DE NAVIGATION (NAVBAR)
+         Utilité : Permet une navigation fluide (ancres) dans la même page.
+         ========================================== -->
+    <header class="navbar">
+        <div class="logo">Portfolio.</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         PARTIE 2 : LA SECTION ACCUEIL (HERO SECTION)
+         Utilité : Zone d'impact visuel principal avec ton portrait et ton titre.
+         ========================================== -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            
+            <!-- Bloc Image : Intègre ton fichier photo IMG_6086.jpg -->
+            <div class="hero-image hidden">
+                <img src="IMG_6086.jpg" alt="Rassi Nathan Emmanuel">
+            </div>
+            
+            <!-- Bloc Texte : Présentation de ton profil d'ingénieur -->
+            <div class="hero-text hidden">
+                <h3>Bonjour, je suis</h3>
+                <h1>Rassi Nathan Emmanuel</h1>
+                <h2>Ingénieur SIT Pétrole <span class="level">1 ere année</span></h2>
+                <p>Spécialisé dans les Systèmes d'Information Technologiques appliqués au secteur pétrolier et gazier. Optimisation des processus, gestion des données d'exploration et développement de solutions logicielles robustes adaptées aux exigences de l'industrie énergétique.</p>
+                
+                <!-- Icônes de réseaux sociaux -->
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <a href="#contactForm" class="btn">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PARTIE 3 : LA SECTION COMPÉTENCES (SKILLS)
+         Utilité : Présentation de tes compétences sous forme de grille.
+         Note Prof : La classe "hidden" sert de déclencheur pour l'animation JavaScript.
+         ========================================== -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">Mes <span>Compétences</span></h2>
+        
+        <div class="skills-grid">
+            <div class="skill-card hidden">
+                <i class="fas fa-oil-well"></i>
+                <h3>Analyse</h3>
+                <p>Analyse des données pétrolières, suivi des flux de production et intégration des systèmes métiers complexes.</p>
+            </div>
+            <div class="skill-card hidden">
+                <i class="fab fa-java"></i>
+                <h3>Upstream / Downstream</h3>
+                <p>Connaissance approfondie des processus de production pétrolière, de l'exploration et de la distribution.</p>
+            </div>
+            <div class="skill-card hidden">
+                <i class="fab fa-js"></i>
+                <h3>HSE (Hygiène, Sécurité, Environnement)</h3>
+                <p>Connaissance des normes et réglementations en matière d'hygiène, de sécurité et d'environnement dans le secteur pétrolier.</p>
+            </div>
+            <div class="skill-card hidden">
+                <i class="fab fa-html5"></i>
+                <h3>Big Data et Traitement de Données Pétrolières</h3>
+                <p>Expérience dans l'analyse et le traitement de grandes quantités de données pétrolières pour l'optimisation des processus et la prise de décision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PARTIE 4 : LA SECTION PROJETS (PROJECTS)
+         Utilité : Grille asymétrique présentant une description technique et des visuels.
+         ========================================== -->
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Dernier <span>Projet</span></h2>
+        
+        <div class="projects-grid">
+            <!-- Carte principale : Description textuelle du projet -->
+            <div class="project-card active hidden">
+                <div class="project-content">
+                    <h3>Système de Monitoring Pétrolier en Temps Réel</h3>
+                    <p>Développement d'une application de supervision complète pour le suivi des flux de production pétrolière. Le backend développé en <strong>Java</strong> traite efficacement les données des capteurs de pipelines, tandis que l'interface en <strong>HTML/CSS/JS</strong> assure une visualisation fluide et animée.</p>
+                </div>
+            </div>
+
+            <!-- Cartes d'illustration (Images Unsplash avec effet de survol) -->
+            <div class="project-card img-card hidden"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500" alt="Dashboard Pétrolier"></div>
+            <div class="project-card img-card hidden"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=500" alt="Ingénierie Pétrole"></div>
+            <div class="project-card img-card hidden"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" alt="Analyse de données"></div>
+            <div class="project-card img-card hidden"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500" alt="Technologie"></div>
+            <div class="project-card img-card hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Graphiques de production"></div>
+        </div>
+        <!-- Formulaire intégré sous la grille de projets -->
+        <div class="inline-contact hidden" id="contactSection">
+            <div class="contact-card">
+                <h2 class="section-title">Contactez <span>Moi</span></h2>
+            <form id="contactForm">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Ton nom" required>
+
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Ton prénom" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="adresse@mail.com" required>
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="4" placeholder="Ton message"></textarea>
+
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PARTIE 5 : LE PIED DE PAGE (FOOTER)
+         ========================================== -->
+    <footer id="contact">
+        <p>&copy; 2026 Rassi Nathan Emmanuel</p>
+    </footer>
+
+    <!-- COMMENTAIRE PROF : Chargement du script JS en fin de document pour optimiser le rendu initial -->
+    <script src="main.js"></script>
+</body>
+</html>

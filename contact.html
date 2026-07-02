@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - Rassi Nathan Emmanuel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Portfolio.</div>
+    <nav>
+      <ul>
+        <li><a href="index.html#home">Accueil</a></li>
+        <li><a href="index.html#skills">Compétences</a></li>
+        <li><a href="index.html#projects">Projets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <div class="contact-card">
+      <h2 class="section-title">Fiche de <span>Contact</span></h2>
+      <form id="contactForm">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" placeholder="Ton nom" required>
+
+        <label for="prenom">Prénom</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Ton prénom" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="adresse@mail.com" required>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="Ton message"></textarea>
+
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>

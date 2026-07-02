@@ -1,0 +1,436 @@
+/* ==========================================================================
+   1. CONFIGURATION GÉNÉRALE ET THÈME GLOBAL
+   Note Prof : Utilisation d'un thème "Dark Mode" industriel (fond sombre, accent orange)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Active le défilement fluide lors des clics sur la navbar */
+}
+
+body {
+    background-color: #0d0d0d; /* Fond ultra sombre */
+    color: #ffffff;
+    overflow-x: hidden; /* Empêche tout bug de défilement horizontal */
+}
+
+span {
+    color: #ff523b; /* Couleur d'accentuation (Orange/Rouge pétrole) */
+}
+
+/* ==========================================================================
+   2. MISE EN PAGE DE LA BARRE DE NAVIGATION (FLEXBOX)
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et les liens à droite */
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(13, 13, 13, 0.95); /* Effet de transparence en arrière-plan */
+    position: fixed; /* Reste collée en haut de l'écran pendant le scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Priorité d'affichage absolue au-dessus des autres éléments */
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s; /* Transition fluide pour le survol */
+}
+
+.navbar ul li a:hover {
+    color: #ff523b;
+}
+
+/* ==========================================================================
+   3. SECTION ACCUEIL (HERO SECTION)
+   ========================================================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    padding-top: 100px;
+    background: radial-gradient(circle at 20% 30%, #201110 0%, #0d0d0d 70%); /* Halo lumineux */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+}
+
+/* Note Prof : Cadrage et mise en forme circulaire parfaite de votre photo verticalisé */
+.hero-image {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%; /* Transforme le carré en rond parfait */
+    overflow: hidden; /* Masque les débordements de la photo */
+    border: 5px solid #ff523b;
+    box-shadow: 0 0 30px rgba(255, 82, 59, 0.3); /* Effet néon */
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre intelligemment la photo sans la déformer */
+    object-position: center center; /* Centre la photo pour garder le visage visible */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Centre parfaitement l'image dans son conteneur circulaire */
+.hero-image { display: flex; justify-content: center; align-items: center; background: #201110; }
+
+.hero-image.show { transform: scale(1.02); transition: transform 0.6s ease, box-shadow 0.6s ease; box-shadow: 0 10px 40px rgba(255,82,59,0.25); }
+
+.hero-text h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #b3b3b3;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #ff523b;
+    margin-bottom: 20px;
+}
+
+.hero-text h2 .level {
+    font-size: 18px;
+    color: #ffffff;
+    background: #2a2a2a;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.hero-text p {
+    color: #a6a6a6;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. COMPOSANTS (BOUTONS & ICÔNES)
+   ========================================================================== */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ff523b;
+    color: #ff523b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ff523b;
+    color: #ffffff;
+    box-shadow: 0 0 15px #ff523b;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #ff523b;
+    border: 2px solid #ff523b;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff523b;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 82, 59, 0.4);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   5. GRILLE DE COMPÉTENCES (CSS GRID RESPONSIVE)
+   ========================================================================== */
+.skills-section {
+    padding: 80px 8%;
+    background-color: #121212;
+}
+
+.skills-grid {
+    display: grid;
+    /* Note Prof : Le repeat(auto-fit) permet d'adapter automatiquement le nombre de colonnes */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background-color: #1a1a1a;
+    padding: 40px 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #262626;
+}
+
+.skill-card i {
+    font-size: 45px;
+    color: #ff523b;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.skill-card p {
+    color: #a6a6a6;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px); /* Légère lévitation au survol */
+    border-color: #ff523b;
+}
+
+/* ==========================================================================
+   6. GRILLE DE PROJETS
+   ========================================================================== */
+.projects-section {
+    padding: 80px 8%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Grille stable à 3 colonnes de base */
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+}
+
+.project-card.active {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.project-content h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.project-content p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.img-card:hover img {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #0d0d0d;
+    border-top: 1px solid #1a1a1a;
+    color: #666;
+}
+
+/* ==========================================================================
+   7. ÉTATS POUR L'ANIMATION JAVASCRIPT (INTERSECTION OBSERVER)
+   ========================================================================== */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Élément poussé vers le bas au départ */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Transition déclenchée par le JS */
+}
+
+/* Classe ajoutée par JavaScript quand l'élément apparaît au scroll */
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Remise en place de l'élément */
+}
+
+/* Décalages d'animation (effet de cascade) pour les cartes */
+.skills-grid .skill-card:nth-child(1) { transition-delay: 0.1s; }
+.skills-grid .skill-card:nth-child(2) { transition-delay: 0.2s; }
+.skills-grid .skill-card:nth-child(3) { transition-delay: 0.3s; }
+.skills-grid .skill-card:nth-child(4) { transition-delay: 0.4s; }
+
+/* ==========================================================================
+   ANIMATIONS SUPPLÉMENTAIRES
+   ========================================================================== */
+/* Légère oscillation pour la photo de profil */
+.hero-image.show, .hero-image { animation: float 6s ease-in-out infinite; }
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+
+/* Curseur de saisie pour le titre */
+.hero-text h1 {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Curseur clignotant */
+.hero-text h1::after {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: #ff523b;
+    margin-left: 6px;
+    animation: blink 1s steps(1) infinite;
+    vertical-align: middle;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Bouton d'appel à l'action pulsant */
+.btn { position: relative; }
+.btn:after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    box-shadow: 0 0 0 rgba(255,82,59,0.0);
+    transition: box-shadow 0.4s ease;
+}
+.btn:hover:after { box-shadow: 0 0 20px rgba(255,82,59,0.25); }
+
+/* Styles pour la page contact */
+.contact-container { padding: 80px 8%; background-color: #0f0f0f; min-height: 70vh; }
+.contact-card { max-width: 700px; margin: 0 auto; background: #121212; padding: 30px; border-radius: 12px; border: 1px solid #262626; }
+.contact-card label { display: block; margin-bottom: 8px; color: #cfcfcf; }
+.contact-card input, .contact-card textarea { width: 100%; padding: 12px 14px; margin-bottom: 14px; border-radius: 8px; border: 1px solid #2a2a2a; background: #0d0d0d; color: #fff; }
+.contact-card .success { color: #9fe6b3; font-weight: 600; text-align: center; }
+
+/* Styles pour le formulaire intégré sous les projets */
+.inline-contact { padding: 60px 8%; background: transparent; }
+.inline-contact .contact-card { max-width: 900px; margin: 0 auto; }
+
+/* Effet de fond animé (dégradé subtil en mouvement) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(600px 400px at 10% 10%, rgba(255,82,59,0.06), transparent 10%),
+                      radial-gradient(500px 300px at 90% 80%, rgba(42,82,152,0.04), transparent 10%);
+    animation: bgShift 14s linear infinite;
+    pointer-events: none;
+}
+@keyframes bgShift {
+    0% { background-position: 0% 0%, 100% 100%; }
+    50% { background-position: 5% 10%, 95% 90%; }
+    100% { background-position: 0% 0%, 100% 100%; }
+}
+
+/* Particules flottantes décoratives (CSS seulement) */
+.bg-particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.06;
+    filter: blur(8px);
+    animation: floatParticle 8s ease-in-out infinite;
+}
+
+/* Canvas 3D arrière-plan */
+#bg3d {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+    display: block;
+}
+@keyframes floatParticle {
+    0% { transform: translateY(0) translateX(0) scale(1); }
+    50% { transform: translateY(-40px) translateX(10px) scale(1.05); }
+    100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* Ajustements responsive pour le formulaire intégré */
+@media (max-width: 968px) {
+    .inline-contact { padding: 40px 6%; }
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (ADAPTATION MOBILES ET TABLETTES)
+   ========================================================================== */
+@media (max-width: 968px) {
+    .hero-container { flex-direction: column; text-align: center; gap: 40px; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); } /* Passage à 2 colonnes */
+    .navbar ul { display: none; } /* Masquage simple du menu */
+    .social-icons { justify-content: center; }
+}
+@media (max-width: 576px) {
+    .projects-grid { grid-template-columns: 1fr; } /* Passage à 1 seule colonne */
+    .hero-image { width: 280px; height: 280px; }
+    .hero-text h1 { font-size: 36px; }
+}
