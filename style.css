@@ -61,7 +61,7 @@ span {
     color: #ff523b;
 }
 
-/* ==========================================================================
+/* 
    3. SECTION ACCUEIL (HERO SECTION)
    ========================================================================== */
 .hero-section {
@@ -75,12 +75,12 @@ span {
 
 .hero-container {
     display: flex;
-    align-items: center;
+    align-items: center; 
     gap: 80px;
     width: 100%;
 }
 
-/* Note Prof : Cadrage et mise en forme circulaire parfaite de votre photo verticalisé */
+/*  Cadrage et mise en forme circulaire parfaite de votre photo verticalisé */
 .hero-image {
     position: relative;
     width: 380px;
