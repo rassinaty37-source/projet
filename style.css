@@ -434,3 +434,33 @@ body::before {
     .hero-image { width: 280px; height: 280px; }
     .hero-text h1 { font-size: 36px; }
 }
+/* ==========================================================================
+   STYLE POUR LE BOUTON DE TÉLÉCHARGEMENT DU CV
+   ========================================================================== */
+.cv-download-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px dashed #2a2a2a; /* Petite ligne de séparation */
+}
+
+.cv-download-container p {
+    color: #a6a6a6;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-cv {
+    background-color: #ff523b; /* Bouton rempli en orange pour attirer l'œil */
+    color: #ffffff !important;
+}
+
+.btn-cv i {
+    margin-right: 8px; /* Espace l'icône PDF du texte */
+}
+
+.btn-cv:hover {
+    background-color: transparent;
+    color: #ff523b !important;
+    box-shadow: 0 0 15px rgba(255, 82, 59, 0.4);
+}
